@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
+import Viewlogin from './Components/views/Viewlogin'
+import ViewWaiter from './Components/views/ViewWaiter'
+import ViewKitchen from './Components/views/ViewKitchen'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  // document.getElementById('root')
+  <Router history={browserHistory}>
+    <Route path="/" component={Viewlogin}></Route>
+    <Route path="/waiter" component={ViewWaiter}></Route>
+    <Route path="/kitchen" component={ViewKitchen}></Route>
+  </Router>,
   document.getElementById('root')
 );
 
