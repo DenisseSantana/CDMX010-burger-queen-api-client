@@ -1,14 +1,36 @@
 import React from 'react'
-import './App.css';
-// import {Login} from './Components/views/Login'
-import {WaiterPage} from './Components/waiterPage/Header'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  /*Link*/
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-    <WaiterPage />
-    </div>
+import {ViewKitchen} from "./Components/views/ViewKitchen"
+import {ViewLogin} from "./Components/views/ViewLogin"
+import {ViewWaiter} from "./Components/views/ViewWaiter"
+
+import './App.css';
+
+
+export default function App() {
+    return (
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <ViewLogin />
+        </Route>
+        <Route path="/kitchen">
+          <ViewKitchen />
+        </Route>
+        <Route path="/waiter">
+          <ViewWaiter />
+        </Route>
+      </Switch>
+    </Router>
+
   );
+
 }
 
-export default App;
+//export default App;
