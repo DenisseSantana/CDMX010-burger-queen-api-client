@@ -54,8 +54,69 @@ input:focus{
   align-items: center;
 }
 
+.myCounter{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 5px;
+}
 
+.addSubstract{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E75333;
+  border: 1px solid #000537;
+  width: 20px;
+  width: 17px;
+}
 
+.numberCounter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000537;
+  border: 1px solid #000537;
+  width: 28px;
+  width: 17px;
+}
+
+.menuElement{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  color: #000537;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  font-family: 'Open Sans';
+}
+
+.menuElementImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 100px;
+}
+
+.menuElementDescription{
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  /* align-items: center; */
+  width: 115px;
+  height: 100px;
+}
+
+/* .menuElementText{
+  display: flex;
+  justify-content:flex-start;
+  align-items:left;
+} */
 
 
 /* Extra small devices (phones, 600px and down) */

@@ -1,10 +1,8 @@
 import React from 'react';
 import {Waiter} from '../Waiter'
 
-export default class ViewWaiter extends Component {
-    render() {
+export const ViewWaiter=() =>{
       return (
       <Waiter />
-      );
-    }
+      );  
   }

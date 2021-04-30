@@ -1,10 +1,11 @@
 import React from 'react';
 import {Login} from '../Login'
 
-export default class Viewlogin extends Component {
-    render() {
+export const Viewlogin = () => {
       return (
-      <Login />
+      <div className='myLogin'>
+        <Login />
+      </div>
+      
       );
-    }
   }
