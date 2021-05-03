@@ -1,0 +1,132 @@
+{
+    "user":[
+        {
+            "_id": 1,
+            "email":"waiter@burguerqueen.com",
+            "password":"1234",
+            "roles": {
+                "waiter": true,
+                "kitchen":false,
+                "admin":false
+            }
+        },
+        {
+            "_id": 2,
+            "email":"kitchen@burguerqueen.com",
+            "password":"1234",
+            "roles": {
+                "waiter": false,
+                "kitchen":true,
+                "admin":false
+            }
+        },
+        {
+            "_id": 3,
+            "email":"admin@burguerqueen.com",
+            "password":"1234",
+            "roles": {
+                "waiter": false,
+                "kitchen":false,
+                "admin":true
+            }
+        }
+    ],
+    "product":[
+        {
+            "_id": "1",
+            "name":"Café americano",
+            "price":5,
+            "image":"./assets/product/cafeamericano.png",
+            "type":"desayuno",
+            "dateEntry":""
+        },
+        {
+            "_id": "2",
+            "name":"Café con leche",
+            "price":7,
+            "image":"./assets/product/cafeconleche.png",
+            "type":"desayuno",
+            "dateEntry":""
+        },
+        {
+            "_id": "3",
+            "name":"Sandwich de jamón y queso",
+            "price":10,
+            "image":"./assets/product/sandwich.png",
+            "type":"desayuno",
+            "dateEntry":""
+        },
+        {
+            "_id": "4",
+            "name":"Jugo de frutas natural",
+            "price":7,
+            "image":"./assets/product/jugo.png",
+            "type":"desayuno",
+            "dateEntry":""
+        },
+        {
+            "_id": "5",
+            "name":"Hamburguesa simple",
+            "price":10,
+            "image":"./assets/product/hamburguesasimple.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "6",
+            "name":"Hamburguesa doble",
+            "price":15,
+            "image":"./assets/product/hamburguesadoble.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "7",
+            "name":"Papas fritas",
+            "price":5,
+            "image":"./assets/product/papasfritas.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "8",
+            "name":"Aros de cebolla",
+            "price":5,
+            "image":"./assets/product/aros.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "9",
+            "name":"Agua 500ml",
+            "price":5,
+            "image":"./assets/product/agua500.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "10",
+            "name":"Agua 700ml",
+            "price":7,
+            "image":"./assets/product/agua700.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "11",
+            "name":"Gaseosa 500ml",
+            "price":7,
+            "image":"./assets/product/gaseosa500.png",
+            "type":"comida",
+            "dateEntry":""
+        },
+        {
+            "_id": "12",
+            "name":"Gaseosa 500ml",
+            "price":10,
+            "image":"./assets/product/gaseosa700.png",
+            "type":"comida",
+            "dateEntry":""
+        }
+    ]
+}

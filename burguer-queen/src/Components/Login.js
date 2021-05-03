@@ -6,7 +6,7 @@ export const Login =()=>{
     return(
         <div className='myLogin'>
          <img src={LogoBur} alt='Burguer Queen' className='logo'/>
-         <AccessForm />
+            <AccessForm />
         </div>
     )
 }

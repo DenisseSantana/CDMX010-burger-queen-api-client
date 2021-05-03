@@ -1,8 +1,12 @@
 import React from 'react';
 import {Waiter} from '../Waiter'
 
-export function ViewWaiter() {
+export const ViewWaiter =() => {
   return (
-    <Waiter />
+    <div>
+      <Waiter />
+
+    </div>
   );
+    
   }
