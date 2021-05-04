@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,37 +8,29 @@ import {
   /*Link*/
 } from "react-router-dom";
 
-import {Viewlogin} from './Components/views/Viewlogin'
-import {ViewWaiter} from './Components/views/ViewWaiter'
-import {ViewKitchen} from './Components/views/ViewKitchen'
-import {ViewAdmin} from './Components/views/ViewAdmin'
+// import {getData} from './lib/data'
+import {Login} from './Components/Login'
+import {Waiter} from './Components/Waiter/Waiter'
+import {Kitchen} from './Components/Kitchen'
+import {Admin} from './Components/Admin'
 
 function App() {
 
-  let getData=async()=>{
-    let url ='http://localhost:3000/product'
-    let getFetchData= await fetch(url).then(resul=>resul.json())
-    console.log(getFetchData)
-  }
   
-  useEffect(()=>{
-    getData()
-  },[]) 
-
   return (
     <Router>
       <Switch>
         <Route path='/waiter'>
-         <ViewWaiter />
+         <Waiter />
         </Route>
         <Route path='/kitchen'>
-         <ViewKitchen />
+         <Kitchen />
         </Route>
         <Route path='/admin'>
-         <ViewAdmin />
+         <Admin />
         </Route>
         <Route path='/'>
-         <Viewlogin />
+         <Login />
         </Route>
       </Switch>
     </Router>   

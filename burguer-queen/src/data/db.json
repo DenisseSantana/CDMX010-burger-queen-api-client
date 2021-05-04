@@ -1,130 +1,133 @@
 {
     "user":[
         {
-            "_id": 1,
+            "_id":1,
             "email":"waiter@burguerqueen.com",
             "password":"1234",
             "roles": {
-                "waiter": true,
+                "waiter":true,
                 "kitchen":false,
                 "admin":false
             }
         },
         {
-            "_id": 2,
+            "_id":2,
             "email":"kitchen@burguerqueen.com",
             "password":"1234",
             "roles": {
-                "waiter": false,
+                "waiter":false,
                 "kitchen":true,
                 "admin":false
             }
+
         },
         {
-            "_id": 3,
+            "_id":3,
             "email":"admin@burguerqueen.com",
             "password":"1234",
             "roles": {
-                "waiter": false,
+                "waiter":false,
                 "kitchen":false,
                 "admin":true
             }
+
         }
     ],
+
     "product":[
         {
-            "_id": "1",
+            "_id":"1",
             "name":"Café americano",
             "price":5,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/cafeamericano.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/cafeamericano.png",
             "type":"desayuno",
             "dateEntry":""
         },
         {
-            "_id": "2",
+            "_id":"2",
             "name":"Café con leche",
             "price":7,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/cafeconleche.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/cafeconleche.png",
             "type":"desayuno",
             "dateEntry":""
         },
         {
-            "_id": "3",
+            "_id":"3",
             "name":"Sandwich de jamón y queso",
             "price":10,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/sandwich.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/sandwich.png",
             "type":"desayuno",
             "dateEntry":""
         },
         {
-            "_id": "4",
+            "_id":"4",
             "name":"Jugo de frutas natural",
             "price":7,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/jugo.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/jugo.png",
             "type":"desayuno",
             "dateEntry":""
         },
         {
-            "_id": "5",
+            "_id":"5",
             "name":"Hamburguesa simple",
             "price":10,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/hamburguesasimple.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/hamburguesasimple.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "6",
-            "name":"Hamburguesa doble",
+            "_id":"6",
+            "name":"Hamburguesa dobele",
             "price":15,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/hamburguesadoble.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/hamburguesadoble.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "7",
+            "_id":"7",
             "name":"Papas fritas",
             "price":5,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/papasfritas.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/papasfritas.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "8",
+            "_id":"8",
             "name":"Aros de cebolla",
             "price":5,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/arosdecebolla.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/arosdecebolla.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "9",
+            "_id":"9",
             "name":"Agua 500ml",
             "price":5,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/agua500.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/agua500.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "10",
+            "_id":"10",
             "name":"Agua 750ml",
             "price":7,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/agua750.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/agua750.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "11",
+            "_id":"11",
             "name":"Bebida/gaseosa 500ml",
             "price":7,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/gaseosa500.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/gaseosa500.png",
             "type":"comida",
             "dateEntry":""
         },
         {
-            "_id": "12",
-            "name":"Bebida/gaseosa 750ml",
+            "_id":"12",
+            "name":"Bebida/gaseosa 500ml",
             "price":10,
-            "image":"https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/gaseosa750.png",
+            "image": "https://raw.githubusercontent.com/DenisseSantana/CDMX010-burger-queen-api-client/master/burguer-queen/src/assets/product/gaseosa750.png",
             "type":"comida",
             "dateEntry":""
         }
