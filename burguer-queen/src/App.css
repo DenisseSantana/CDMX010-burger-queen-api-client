@@ -1,0 +1,193 @@
+.myLogin{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  background-image:url('./assets/back.png');
+  height: 100vh;
+}
+
+.mainLogin{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  /* background-image:url('./assets/back.png'); */
+}
+
+.logo{
+  height: 400px;
+  width: 400px;
+}
+
+input{
+  background-color: #000537;
+  color: white;
+  height: 40px;
+  width: 200px;
+  border: none;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+input:hover{
+  background-color:#E75333;
+  /* color: #000537; */
+  height: 40px;
+  width: 200px;
+  border: none;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+input:focus{
+  border: none; 
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  text-align: center;
+}
+
+.myForm{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myCounter{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 5px;
+}
+
+.addSubstract{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E75333;
+  border: 1px solid #000537;
+  width: 20px;
+  width: 17px;
+}
+
+.numberCounter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000537;
+  border: 1px solid #000537;
+  width: 28px;
+  width: 17px;
+}
+
+.menuElement{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  color: #000537;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  font-family: 'Open Sans';
+}
+
+.menuElementImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 100px;
+}
+
+.menuElementDescription{
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  /* align-items: center; */
+  width: 115px;
+  height: 100px;
+}
+
+/* .menuElementText{
+  display: flex;
+  justify-content:flex-start;
+  align-items:left;
+} */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .myLogin{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-image:url('./assets/back.png');
+    height: 100vh;
+  }
+  
+  .mainLogin{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    /* background-image:url('./assets/back.png'); */
+  }
+  
+  .logo{
+    height: 250px;
+    width: 250px;
+  }
+  
+  input{
+    background-color: #000537;
+    color: white;
+    height: 35px;
+    width: 144px;
+    border: none;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  input:hover{
+    background-color:#E75333;
+    /* color: #000537; */
+    height: 35px;
+    width: 144px;
+    border: none;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  input:focus{
+    border: none; 
+  }
+  
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    text-align: center;
+  }
+  
+  .myForm{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
