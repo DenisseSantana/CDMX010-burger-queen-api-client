@@ -44,7 +44,7 @@
             "_id": "2",
             "name":"Café con leche",
             "price":7,
-            "image":"./assets/product/cafeconleche.png",
+            "image":"https://raw.githubusercontent.com/KarinaKanoDev/CDMX010-burger-queen-api-client/creatingRouter/burguer-queen/src/assets/product/cafeamericano.png",
             "type":"desayuno",
             "dateEntry":""
         },
