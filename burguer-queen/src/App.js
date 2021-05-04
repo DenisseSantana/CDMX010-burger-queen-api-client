@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,35 +7,42 @@ import {
   /*Link*/
 } from "react-router-dom";
 
-import {ViewKitchen} from "./Components/views/ViewKitchen"
-import {ViewLogin} from "./Components/views/ViewLogin"
-import {ViewWaiter} from "./Components/views/ViewWaiter"
-import {ViewAdmin} from "./Components/views/ViewAdmin"
+import {Viewlogin} from './Components/views/Viewlogin'
+import {ViewWaiter} from './Components/views/ViewWaiter'
+import {ViewKitchen} from './Components/views/ViewKitchen'
+import {ViewAdmin} from './Components/views/ViewAdmin'
 
-import './App.css';
+function App() {
 
+  let getData=async()=>{
+    let url ='http://localhost:3000/product'
+    let getFetchData= await fetch(url).then(resul=>resul.json())
+    console.log(getFetchData)
+  }
+  
+  useEffect(()=>{
+    getData()
+  },[]) 
 
-export default function App() {
-    return (
+  return (
     <Router>
       <Switch>
-        <Route path="/kitchen">
-          <ViewKitchen />
+        <Route path='/waiter'>
+         <ViewWaiter />
         </Route>
-        <Route path="/waiter">
-          <ViewWaiter />
+        <Route path='/kitchen'>
+         <ViewKitchen />
         </Route>
-        <Route path="/waiter">
-          <ViewAdmin />
+        <Route path='/admin'>
+         <ViewAdmin />
         </Route>
-        <Route path="/">
-          <ViewLogin />
+        <Route path='/'>
+         <Viewlogin />
         </Route>
       </Switch>
-    </Router>
-
+    </Router>   
   );
 
 }
 
-//export default App;
+export default App;
