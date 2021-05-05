@@ -1,31 +1,23 @@
 import React, { useEffect} from 'react'
 
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  // Link
+  /*Link*/
 } from "react-router-dom";
+
+// import {getData} from './lib/data'
 import {Login} from './Components/Login'
-import {Waiter} from './Components/Waiter'
+import {Waiter} from './Components/Waiter/Waiter'
 import {Kitchen} from './Components/Kitchen'
 import {Admin} from './Components/Admin'
 
-
 function App() {
 
-  // let [product,setProduct]=useState()
-
-  let getData=async()=>{
-    let url ='http://localhost:3000/product'
-    let getFetchData= await fetch(url).then(resul=>resul.json())
-    console.log(getFetchData)
-  }
-  useEffect(()=>{
-    getData()
-  },[]) 
-
+  
   return (
     <Router>
       <Switch>
@@ -44,6 +36,7 @@ function App() {
       </Switch>
     </Router>   
   );
+
 }
 
 export default App;
