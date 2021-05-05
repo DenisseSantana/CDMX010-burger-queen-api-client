@@ -118,6 +118,31 @@ input:focus{
   align-items:left;
 } */
 
+.headerComponent {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  height: 150px;
+  background-image:url('./assets/back.png');
+}
+.logoText {
+  height: 100px;
+  align-content: center;
+  margin-left: 20px;
+}
+.userIcon {
+  width: 75px;
+  margin-left: 620px;;
+}
+/*Boton component*/
+.botonComponent{
+  height: 20x;
+  width: 10;
+  background-color: #000537;
+}
+
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
