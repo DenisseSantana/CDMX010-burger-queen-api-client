@@ -305,7 +305,7 @@ input:focus{
 }
 .total{
   background-color: #9fa2be;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 250px;
   height: 65px;
   display: flex;

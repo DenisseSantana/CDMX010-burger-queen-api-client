@@ -7,17 +7,28 @@ import {MenuElement} from './MenuElement'
 export const Waiter =()=>{
     // eslint-disable-next-line no-unused-vars
     const [menu, setMenu]=useState()
+    const [menuComida, setMenuComida] = useState("desayuno") 
+
 
     const handleGetData=async()=>{
         let url ='http://localhost:3000/product'
         let getFetchData = await fetch(url).then(resul=>resul.json())
         setMenu(getFetchData)
     }
+
+    function changebreakfast(){
+        setMenuComida("comida")
+    }
+
+    function changeFood(){
+        setMenuComida("desayuno")
+    }
   
     useEffect(()=>{
         handleGetData()
     },[]) 
 
+    
     return(
         <div className='waiterView'>
             <Header/>
@@ -30,23 +41,23 @@ export const Waiter =()=>{
                 </div>
             </div>
       
-                <div className='typeMenu'>
-                    <div className='typeOfFood' id='desayuno' >
+                <div className='typeMenu' >
+                    <div className='typeOfFood' id='desayuno'  onClick={changeFood} >
                         <p>Desayuno</p>
                     </div>
-                    <div className='typeOfFood' id='comida'>
+                    <div className='typeOfFood' id='comida'onClick={changebreakfast}>
                         <p>Comida</p>
                     </div>
                 </div>
-                <div className='productMenu'>
-                    {menu&&menu.map(product => 
+                <div id="rendermMenu" className='productMenu'>
+                    {menu&&menu.filter(item => item.type === menuComida).map(product => 
                         <MenuElement 
                             product={product} 
                             key={product._id}
                         />
                     )}
                 </div>              
-           
+    
            <div className="toOrder">
                 <div className='nameColumns'>
                     <h3>Cliente</h3>
