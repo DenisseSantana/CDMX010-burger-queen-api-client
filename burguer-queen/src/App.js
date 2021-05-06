@@ -16,7 +16,6 @@ import {Kitchen} from './Components/Kitchen'
 import {Admin} from './Components/Admin'
 
 function App() {
-
   
   return (
     <Router>
@@ -36,7 +35,6 @@ function App() {
       </Switch>
     </Router>   
   );
-
 }
 
 export default App;

@@ -16,6 +16,5 @@ export const MenuElement = ({product}) => {
                 <div><CounterElement /></div>
             </div>       
         </div>  
-        
     )
 }
