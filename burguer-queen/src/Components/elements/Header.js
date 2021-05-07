@@ -1,7 +1,6 @@
 import React from 'react';
 import BurguerText from '../../assets/logoDos.png'
 import UserIcon from '../../assets/userIcon.png'
-
 export function Header () {
     return (
         <div className="headerComponent">
