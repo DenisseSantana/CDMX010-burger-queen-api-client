@@ -141,7 +141,23 @@ input:focus{
   background-color: #000537;
 }
 
+.myAlertClient{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 300px;
+}
 
+.inputAlert{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
