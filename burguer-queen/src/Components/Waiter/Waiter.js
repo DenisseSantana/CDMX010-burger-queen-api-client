@@ -60,7 +60,7 @@ export const Waiter =()=>{
     
            <div className="toOrder">
                 <div className='nameColumns'>
-                    <h3>Cliente</h3>
+                    <h3 id = 'nameClient'>Cliente</h3>
                     <h3>Mesa / No.</h3>
                     <h3>Orden</h3>
                 </div>
