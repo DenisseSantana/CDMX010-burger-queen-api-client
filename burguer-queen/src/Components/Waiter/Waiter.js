@@ -54,11 +54,14 @@ export const Waiter = () => {
     }, [])
     
     const handleAddItem = ((item)=> {
-        setOrder({...order, items:[...order.items, item]})
+        setOrder({...order, 
+            items:[...order.items, item],
+            total: order.total+= parseInt(item.price)
+        })
         //     // const items =order.items;
         //     // if(!items.find(p => product.name === p.name)) {
         //     //     setOrder({
-        //     //         items: [...order, {name: product.name, id: product.id, totalPrice: parseInt(product.totalPrice), price: parseInt(product.price)}],
+        //     //         items: [...order, {name: product.name, id: product.id, price: parseInt(product.price), price: parseInt(product.price)}],
         //     //     }) 
         //     // } else if(items.find(p => product.name === p.name)) {      
         //     //    //handleUpdatePriceOrder(product.id, product.price);
@@ -72,41 +75,42 @@ export const Waiter = () => {
     //     client: e.target.value,
     // });
 
-    // useEffect(() => {
-    //     const handleTotal = () => {
-    //         let value = 0;
-    //         order.items.map((item)=> {
-    //             value = value + (parseInt(item.totalPrice));
-    //             return value;
-    //         });
-    //         setOrder({
-    //             ...order, total: value
-    //         });
-    //     };
-    //     handleTotal();
-    // },[]);
+    useEffect(() => {
+        const handleTotal = () => {
+            let value = 0;
+            order.items.map((item)=> {
+                value = value + (parseInt(item.price));
+                return value;
+            });
+            setOrder({
+                ...order, total: value
+            });
+        };
+        handleTotal();
+    },[]);
 
     
-    // const handleRemoveProductOrder = (id, totalPrice, price ) => {
-    //     if (totalPrice === price) {
-    //         console.log('producto eliminado');
-    //         const newArrayItem = order.items.filter((item) =>
-    //         item.id !== id
-    //     )
-    //     setOrder(newArrayItem)
-    //     } else {
-    //         const remove = order.items.map((item) => {
-    //             if(item.id === id) {
-    //                 return {
-    //                     ...item,
-    //                     totalPrice: parseInt(totalPrice) - parseInt(price),
-    //                 };
-    //             }
-    //             return item;              
-    //         });
-    //         setOrder(remove);
-    //     }
-    // };
+    const handleRemoveProductOrder = (id, price, total) => {
+        console.log(id,price,total)
+        // if (price === total) {
+        //     console.log('producto eliminado');
+        //     const newArrayItem = order.items.filter((item) =>
+        //     item._id !== id
+        // )
+        // setOrder({...order, items: newArrayItem, total:order.total-parseInt(price)})
+        // } else {
+        //     const remove = order.items.map((item) => {
+        //         if(item._id === id) {
+        //             return {
+        //                 ...item,
+        //                 price: parseInt(price) - parseInt(total),
+        //             };
+        //         }
+        //         return item;              
+        //     });
+        //  setOrder({...order, items: remove, total:order.total-parseInt(price)});
+        // }
+    };
 
     // const handleUpdatePriceOrder = (id, price) => {
     //     const items = order.items;
@@ -114,7 +118,7 @@ export const Waiter = () => {
     //     const updateProduct = items.map((item) => {
     //         if(item.id === id) {
     //             return {
-    //                 ...item, totalPrice: parseInt(item.totalPrice) + parseInt(price), 
+    //                 ...item, price: parseInt(item.price) + parseInt(price), 
     //             };
     //         }else{
     //             console.log('no funciona');
@@ -195,16 +199,18 @@ export const Waiter = () => {
                     <h3 id='myTable'>Mesa / No.</h3>
                     <h3>Orden</h3>
                 </div>
+                <div className="orderContainer">
+                    <Order order={order} handleRemoveProductOrder={handleRemoveProductOrder} />
+                </div>
                 
-                <Order order={order} />
                 
 
                 <div className='itemContenedor'>
                     <div>
                         <textarea name="textarea" rows="4" cols="45">Observaciones...</textarea>
                     </div>
-                    <div className='total'>
-                        {/* <h3>{!order.items ? '0' : order.total}</h3> */}
+                    <div className='total'order={order}>
+                        <h3> Total:$ {!order.items ? '0' : order.total}</h3>
                     </div>
                 </div>
 

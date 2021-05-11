@@ -2,14 +2,20 @@
 
 import React from 'react'
 
-export function Order(props) {
+export function Order(props, handleRemoveProductOrder) {
     return(
     <div className='itemOrder'>
 
             {props.order.items.map((item) => {
                 return(
-
-                <div key={item._id} >{item.name}</div>
+                    <div className='itemOrder' key={item._id}>
+                    <div className='item'>
+                        <img className='trash' onClick={()=>handleRemoveProductOrder(item._id,item.price,item.total)} src ='https://firebasestorage.googleapis.com/v0/b/burgerqueen-21918.appspot.com/o/trash.png?alt=media&token=52619b12-0fd2-487e-8609-e72e5033a0f6' />
+                        <h3 className='textOrder'>{item.name}</h3>
+                        <h3 className='textOrder'>2x</h3>
+                        <h3 className='textOrder'>{item.price}</h3>
+                    </div>
+                </div>
                 )
             })}
     </div>
