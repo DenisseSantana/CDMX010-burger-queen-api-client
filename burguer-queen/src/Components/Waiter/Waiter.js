@@ -89,28 +89,54 @@ export const Waiter = () => {
         handleTotal();
     },[]);
 
-    
-    const handleRemoveProductOrder = (id, price, total) => {
-        console.log(id,price,total)
-        // if (price === total) {
-        //     console.log('producto eliminado');
-        //     const newArrayItem = order.items.filter((item) =>
-        //     item._id !== id
-        // )
-        // setOrder({...order, items: newArrayItem, total:order.total-parseInt(price)})
-        // } else {
-        //     const remove = order.items.map((item) => {
-        //         if(item._id === id) {
-        //             return {
-        //                 ...item,
-        //                 price: parseInt(price) - parseInt(total),
-        //             };
-        //         }
-        //         return item;              
-        //     });
-        //  setOrder({...order, items: remove, total:order.total-parseInt(price)});
-        // }
+    const handleRemoveProductOrder = (id, price,total) => {
+        console.log(id,"price", price,"total", total)
+        if (price) {
+            // console.log('producto eliminado');
+            const newArrayItem = order.items.filter((item) =>
+            item._id !== id
+        )
+        setOrder({...order, items: newArrayItem, total:order.total-parseInt(price)})
+        }else {
+            const remove = order.items.map((item) => {
+                if(item._id === id) {
+                    return {
+                        ...item,
+                        price: parseInt(price) - parseInt(total),
+                    };
+                }
+                return item;              
+            });
+
+         setOrder({...order, 
+            items: remove,
+            total:order.total-parseInt(price)});
+        }
     };
+
+    // const handleRemoveProductOrder = (id, price,total) => {
+    //     console.log(id,"price", price,"total", total)
+    //     if (price === total) {
+    //         console.log('producto eliminado');
+    //         const newArrayItem = order.items.filter((item) =>
+    //         item._id !== id
+    //     )
+    //     setOrder({...order, items: newArrayItem, total:order.total-parseInt(price)})
+    //     } else {
+
+    //         const remove = order.items.map((item) => {
+    //             if(item._id === id) {
+    //                 return {
+    //                     ...item,
+    //                     price: parseInt(price) - parseInt(total),
+    //                 };
+    //             }
+    //             return item;              
+    //         });
+
+    //      setOrder({...order, items: remove, total:order.total-parseInt(price)});
+    //     }
+    // };
 
     // const handleUpdatePriceOrder = (id, price) => {
     //     const items = order.items;
@@ -202,9 +228,6 @@ export const Waiter = () => {
                 <div className="orderContainer">
                     <Order order={order} handleRemoveProductOrder={handleRemoveProductOrder} />
                 </div>
-                
-                
-
                 <div className='itemContenedor'>
                     <div>
                         <textarea name="textarea" rows="4" cols="45">Observaciones...</textarea>
