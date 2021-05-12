@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Header } from '../elements/Header'
 import { MenuElement } from './MenuElement'
 import { Order } from './order';
+import { Link } from 'react-router-dom';
 // import {ModalPopUp} from './AlertOrder'
 
 
 export const Waiter = () => {
- 
+
     const handleNewOrder = () => {
         let clientName = prompt('Nombre del cliente');
-        
+
         if (clientName === null || clientName == '') {
             alert('No ingresaste el nombre del cliente')
         } else {
             let numberMesa = prompt('Ingresa No. de mesa');
-    
+
             if (numberMesa === null || numberMesa == '') {
                 alert('No Ingresaste no. de mesa')
             } else {
@@ -27,12 +28,12 @@ export const Waiter = () => {
     // eslint-disable-next-line no-unused-vars
     const [menu, setMenu] = useState()
     const [menuComida, setMenuComida] = useState("desayuno")
-    const [order, setOrder ] = useState({
-        client:'',
-        time:'',
-        items:[],
-        status:'pendiente',
-        total:0
+    const [order, setOrder] = useState({
+        client: '',
+        time: '',
+        items: [],
+        status: 'pendiente',
+        total: 0
     });
 
     const handleGetData = async () => {
@@ -52,11 +53,12 @@ export const Waiter = () => {
     useEffect(() => {
         handleGetData()
     }, [])
-    
-    const handleAddItem = ((item)=> {
-        setOrder({...order, 
-            items:[...order.items, item],
-            total: order.total+= parseInt(item.price)
+
+    const handleAddItem = ((item) => {
+        setOrder({
+            ...order,
+            items: [...order.items, item],
+            total: order.total += parseInt(item.price)
         })
         //     // const items =order.items;
         //     // if(!items.find(p => product.name === p.name)) {
@@ -78,7 +80,7 @@ export const Waiter = () => {
     useEffect(() => {
         const handleTotal = () => {
             let value = 0;
-            order.items.map((item)=> {
+            order.items.map((item) => {
                 value = value + (parseInt(item.price));
                 return value;
             });
@@ -87,30 +89,32 @@ export const Waiter = () => {
             });
         };
         handleTotal();
-    },[]);
+    }, []);
 
-    const handleRemoveProductOrder = (id, price,total) => {
-        console.log(id,"price", price,"total", total)
-        if (price) {
+    const handleRemoveProductOrder = (id, price, total) => {
+        console.log(id, "price", price, "total", total)
+        if (id) {
             // console.log('producto eliminado');
             const newArrayItem = order.items.filter((item) =>
-            item._id !== id
-        )
-        setOrder({...order, items: newArrayItem, total:order.total-parseInt(price)})
-        }else {
+                item._id !== id
+            )
+            setOrder({ ...order, items: newArrayItem, total: order.total - parseInt(price) })
+        } else {
             const remove = order.items.map((item) => {
-                if(item._id === id) {
+                if (item._id === id) {
                     return {
                         ...item,
                         price: parseInt(price) - parseInt(total),
                     };
                 }
-                return item;              
+                return item;
             });
 
-         setOrder({...order, 
-            items: remove,
-            total:order.total-parseInt(price)});
+            setOrder({
+                ...order,
+                items: remove,
+                total: order.total - parseInt(price)
+            });
         }
     };
 
@@ -156,35 +160,33 @@ export const Waiter = () => {
     //         items: updateProduct,
     //      });
     // };
-    
 
-    
 
-     
-    // const handleUpdatedOrder = (parametro) => {
-     
-    //     callback(parametro);
-        
-    //     let data = {
-    //         client: order.client,
-    //         time: order.time,
-    //         items:order.items,
-    //         status:'pendiente',
-    //         total:order.total,
-    //     }
-    //     const handlePostNewOrder = () => {
-    //         let url = 'http://localhost:3000/orders';
-    //         let body = JSON.stringify(data);
-    //         return fetch(url, {    
-    //           body,
-    //           method: 'POST',
-    //           headers: {
-    //             'Content-Type': 'application/json'
-    //           },
-    //         });
-    //       };
-    //     handlePostNewOrder();  
-    // };
+
+
+
+    const handleUpdatedOrder = (order) => {
+        let data = {
+            items: order.items,
+            status: 'pendiente',
+            total: order.total,
+        }
+
+        const handlePostNewOrder = () => {
+            let url = 'http://localhost:3000/orders';
+            let body = JSON.stringify(data);
+            return fetch(url, {
+                body,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+        };
+        handlePostNewOrder();
+        setOrder({ ...order })
+        alert('Tu pedido ha sido enviado')
+    };
 
     return (
         <div className='waiterView'>
@@ -195,7 +197,7 @@ export const Waiter = () => {
                     <p>Nueva orden</p>
                 </div>
                 <div className='botonComponent'>
-                    <p>Ordeness</p>
+                    <p>Ordenes</p>
                 </div>
             </div>
 
@@ -232,13 +234,18 @@ export const Waiter = () => {
                     <div>
                         <textarea name="textarea" rows="4" cols="45">Observaciones...</textarea>
                     </div>
-                    <div className='total'order={order}>
+                    <div className='total' order={order}>
                         <h3> Total:$ {!order.items ? '0' : order.total}</h3>
                     </div>
                 </div>
 
                 <div className='confirmButton'>
-                    {/* <h3 onClick={()=>handleUpdatedOrder(order)} >Confirmar</h3> */}
+                    <Link to='/Kitchen'>
+                        <input type="submit" value="Enviar" onClick={()=>handleUpdatedOrder(order)} />
+                    </Link>
+                    {/* <Link to= '/Kitchen'>
+                        <h3 className="confirmOrderB" onClick={()=>handleUpdatedOrder(order)} >Confirmar</h3>
+                    </Link> */}
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { CounterElement } from '../elements/CounterElement'
+// import { CounterElement } from '../elements/CounterElement'
 // import example from '../../assets/Vector.png'
 
 export const MenuElement = ({product, handleAddItem}) => {
@@ -11,9 +11,9 @@ export const MenuElement = ({product, handleAddItem}) => {
                 <div className='menuElementDescription'> 
                     <div className='menuElementText'>
                         <div>{product.name}</div>
-                        <div>{product.price}</div>
+                        <div>$ {product.price}</div>
                     </div>
-                <div><CounterElement /></div>
+                {/* <div><CounterElement /></div> */}
             </div>       
         </div>  
     )

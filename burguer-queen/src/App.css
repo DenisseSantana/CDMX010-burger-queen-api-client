@@ -1,3 +1,12 @@
+/* *{
+  font-family: "Open Sans"
+} */
+@font-face {
+  font-family: 'Rye';
+  src: local('Rye'),
+       url('./assets/Rye-Regular.ttf') format('truetype');
+}
+
 .myLogin{
   display: flex;
   flex-direction:column;
@@ -27,6 +36,7 @@ input{
   width: 200px;
   border: none;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  
 }
 
 input:hover{
@@ -106,10 +116,11 @@ input:focus{
 .menuElementDescription{
   display: flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:center;
   /* align-items: center; */
   width: 115px;
   height: 100px;
+  font-size: 20px;
 }
 
 /* .menuElementText{
@@ -257,7 +268,7 @@ input:focus{
   background-color: #9fa2be;
   color: aliceblue;
   display: flex;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Rye";
   font-size: 30px;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -280,7 +291,7 @@ input:focus{
   display: flex;
   background-color: #E75333;
   color: white;
-  font-family: 'Open Sans';
+  font-family: 'Rye';
   width: 250px;
   height: 65px;
   font-size: 30px;
@@ -369,17 +380,19 @@ input:focus{
   background-color:#000537;
   color: aliceblue;
   display: flex;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 30px;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin: 50px;;
-
+  margin: 50px;
+  
 }
 .textOrder{
   width: 20%;
+}
+
+.confirmOrderB h3{
+  text-decoration: none;
 }
 
 
