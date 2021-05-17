@@ -321,17 +321,27 @@ input:focus{
   justify-content: space-around;
   margin-bottom: 10px;
 }
+.orderContainer{
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+  
+
+}
 .itemOrder{
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .item{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 20px;
 }
 .trash{
   width: 30px;
@@ -367,6 +377,9 @@ input:focus{
   justify-content: center;
   margin: 50px;;
 
+}
+.textOrder{
+  width: 20%;
 }
 
 
