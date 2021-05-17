@@ -11,7 +11,11 @@ export const MenuElement = ({product, handleAddItem}) => {
                 <div className='menuElementDescription'> 
                     <div className='menuElementText'>
                         <div>{product.name}</div>
-                        <div>$ {product.price}</div>
+                        <div>
+                            <strong>
+                                $ {product.price}
+                            </strong>
+                            </div>
                     </div>
                 {/* <div><CounterElement /></div> */}
             </div>       
