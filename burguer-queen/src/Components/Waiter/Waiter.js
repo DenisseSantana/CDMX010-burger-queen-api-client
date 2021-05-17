@@ -1,117 +1,219 @@
-import React, {useEffect, useState} from 'react';
-import {Header} from '../elements/Header'
-// import { AlertOrder } from './AlertOrder';
-import {MenuElement} from './MenuElement'
+import React, { useEffect, useState } from 'react';
+import { Header } from '../elements/Header'
+import { MenuElement } from './MenuElement'
+import { Order } from './order';
+// import {ModalPopUp} from './AlertOrder'
 
 
-
-export const Waiter =()=>{
+export const Waiter = () => {
+ 
+    const handleNewOrder = () => {
+        let clientName = prompt('Nombre del cliente');
+        
+        if (clientName === null || clientName == '') {
+            alert('No ingresaste el nombre del cliente')
+        } else {
+            let numberMesa = prompt('Ingresa No. de mesa');
+    
+            if (numberMesa === null || numberMesa == '') {
+                alert('No Ingresaste no. de mesa')
+            } else {
+                alert('Los datos se guardaron correctamente!')
+            }
+            document.getElementById('myClientName').innerHTML = clientName;
+            document.getElementById('myTable').innerHTML = numberMesa;
+        }
+    };
     // eslint-disable-next-line no-unused-vars
-    const [menu, setMenu]=useState()
-    const [menuComida, setMenuComida] = useState("desayuno") 
+    const [menu, setMenu] = useState()
+    const [menuComida, setMenuComida] = useState("desayuno")
+    const [order, setOrder ] = useState({
+        client:'',
+        time:'',
+        items:[],
+        status:'pendiente',
+        total:0
+    });
 
-
-    const handleGetData=async()=>{
-        let url ='http://localhost:3000/product'
-        let getFetchData = await fetch(url).then(resul=>resul.json())
+    const handleGetData = async () => {
+        let url = 'http://localhost:3000/product'
+        let getFetchData = await fetch(url).then(resul => resul.json())
         setMenu(getFetchData)
     }
 
-    function changebreakfast(){
+    function changebreakfast() {
         setMenuComida("comida")
     }
 
-    function changeFood(){
+    function changeFood() {
         setMenuComida("desayuno")
     }
-  
-    useEffect(()=>{
+
+    useEffect(() => {
         handleGetData()
-    },[]) 
+    }, [])
     
-    // const newOrder = ()=>{
-    // let goAlert = document.getElementbyID('toShowAlert')
-    // goAlert.innerHTML = <AlertOrder />
-    // }
-     const newOrder = ()=>{
-    let clientName = prompt('Nombre del cliente');
-    if(clientName === null || clientName ==''){
-        alert('No ingresaste el nombre del cliente')
-    }else{
-        let numberMesa = prompt('Ingresa No. de mesa');
-        if (numberMesa === null || numberMesa == ''){
-          alert('No Ingresaste no. de mesa')
-        } else {
-            alert('Los datos se guardaron correctamente!')
-        }
-    document.getElementById('myClientName').innerHTML= clientName;
-    document.getElementById('myTable').innerHTML= numberMesa;
-    }
-    // document.getElementById('myClientName').innerHTML= clientName.value;
-    // document.getElementById('myTable').innerHTML= numberMesa.value;
-    }
+    const handleAddItem = ((item)=> {
+        setOrder({...order, items:[...order.items, item]})
+        //     // const items =order.items;
+        //     // if(!items.find(p => product.name === p.name)) {
+        //     //     setOrder({
+        //     //         items: [...order, {name: product.name, id: product.id, totalPrice: parseInt(product.totalPrice), price: parseInt(product.price)}],
+        //     //     }) 
+        //     // } else if(items.find(p => product.name === p.name)) {      
+        //     //    //handleUpdatePriceOrder(product.id, product.price);
+        //     // }        
+    });
+
+    // FUNCIONES PARA CREAR LAS ORDENES
+
+    // const handleUpdateNewClientOrder = e => setOrder({
+    //     ...order,
+    //     client: e.target.value,
+    // });
+
+    // useEffect(() => {
+    //     const handleTotal = () => {
+    //         let value = 0;
+    //         order.items.map((item)=> {
+    //             value = value + (parseInt(item.totalPrice));
+    //             return value;
+    //         });
+    //         setOrder({
+    //             ...order, total: value
+    //         });
+    //     };
+    //     handleTotal();
+    // },[]);
+
     
-    return(
+    // const handleRemoveProductOrder = (id, totalPrice, price ) => {
+    //     if (totalPrice === price) {
+    //         console.log('producto eliminado');
+    //         const newArrayItem = order.items.filter((item) =>
+    //         item.id !== id
+    //     )
+    //     setOrder(newArrayItem)
+    //     } else {
+    //         const remove = order.items.map((item) => {
+    //             if(item.id === id) {
+    //                 return {
+    //                     ...item,
+    //                     totalPrice: parseInt(totalPrice) - parseInt(price),
+    //                 };
+    //             }
+    //             return item;              
+    //         });
+    //         setOrder(remove);
+    //     }
+    // };
+
+    // const handleUpdatePriceOrder = (id, price) => {
+    //     const items = order.items;
+    //     console.log(items);
+    //     const updateProduct = items.map((item) => {
+    //         if(item.id === id) {
+    //             return {
+    //                 ...item, totalPrice: parseInt(item.totalPrice) + parseInt(price), 
+    //             };
+    //         }else{
+    //             console.log('no funciona');
+    //         }
+    //         return item;
+    //     });
+    //     setOrder({
+    //         ...order,
+    //         items: updateProduct,
+    //      });
+    // };
+    
+
+    
+
+     
+    // const handleUpdatedOrder = (parametro) => {
+     
+    //     callback(parametro);
+        
+    //     let data = {
+    //         client: order.client,
+    //         time: order.time,
+    //         items:order.items,
+    //         status:'pendiente',
+    //         total:order.total,
+    //     }
+    //     const handlePostNewOrder = () => {
+    //         let url = 'http://localhost:3000/orders';
+    //         let body = JSON.stringify(data);
+    //         return fetch(url, {    
+    //           body,
+    //           method: 'POST',
+    //           headers: {
+    //             'Content-Type': 'application/json'
+    //           },
+    //         });
+    //       };
+    //     handlePostNewOrder();  
+    // };
+
+    return (
         <div className='waiterView'>
-            <Header/>
+            <Header />
+
             <div className='bottonSeccion'>
-                <div className='botonComponent' onClick={newOrder}> 
+                <div className='botonComponent' onClick={handleNewOrder}>
                     <p>Nueva orden</p>
                 </div>
                 <div className='botonComponent'>
                     <p>Ordeness</p>
                 </div>
-                {/* <div id='toShowAlert'>
-                    
-                </div> */}
             </div>
-      
-                <div className='typeMenu' >
-                    <div className='typeOfFood' id='desayuno'  onClick={changeFood} >
-                        <p>Desayuno</p>
-                    </div>
-                    <div className='typeOfFood' id='comida'onClick={changebreakfast}>
-                        <p>Comida</p>
-                    </div>
+
+            <div className='typeMenu' >
+                <div className='typeOfFood' id='desayuno' onClick={changeFood} >
+                    <p>Desayuno</p>
                 </div>
-                <div id="rendermMenu" className='productMenu'>
-                    {menu&&menu.filter(item => item.type === menuComida).map(product => 
-                        <MenuElement 
-                            product={product} 
-                            key={product._id}
-                        />
-                    )}
-                </div>              
-    
-           <div className="toOrder">
+                <div className='typeOfFood' id='comida' onClick={changebreakfast}>
+                    <p>Comida</p>
+                </div>
+            </div>
+
+            <div id="rendermMenu" className='productMenu'>
+                {menu && menu.filter(item => item.type === menuComida).map(product =>
+                    <MenuElement
+                        handleAddItem={handleAddItem}
+                        product={product}
+                        key={product._id}
+                    />
+                )}
+            </div>
+
+            <div className="toOrder">
+
                 <div className='nameColumns'>
                     <h3 id='myClientName'>Cliente</h3>
                     <h3 id='myTable'>Mesa / No.</h3>
                     <h3>Orden</h3>
                 </div>
-                <div className='itemOrder'>
-                    <div className='item'>
-                        <img className='trash' src ='https://firebasestorage.googleapis.com/v0/b/burgerqueen-21918.appspot.com/o/trash.png?alt=media&token=52619b12-0fd2-487e-8609-e72e5033a0f6' />
-                        <h3>Nombre del producto</h3>
-                        <h3>2x</h3>
-                        <h3>$10</h3>
-                    </div>
-                </div>
+                
+                <Order order={order} />
+                
+
                 <div className='itemContenedor'>
                     <div>
                         <textarea name="textarea" rows="4" cols="45">Observaciones...</textarea>
                     </div>
                     <div className='total'>
-                        <h3>Total = $10</h3>
+                        {/* <h3>{!order.items ? '0' : order.total}</h3> */}
                     </div>
-                    
-                    
                 </div>
+
                 <div className='confirmButton'>
-                        <h3>Confirmar</h3>
-                    </div>
-                
-            </div>           
+                    {/* <h3 onClick={()=>handleUpdatedOrder(order)} >Confirmar</h3> */}
+                </div>
+
+            </div>
+
         </div>
-        )
-} 
+    )
+}
