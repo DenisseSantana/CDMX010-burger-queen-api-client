@@ -19,10 +19,50 @@ export const Waiter =()=>{
     return(
         <div className='waiterView'>
             <Header/>
-            <h1>Esta es  la pagina del mesero</h1>
-           {menu&&menu.map(product => 
-                <MenuElement product={product} key={product._id}/>
-            )}
+            <div className='bottonSeccion'>
+                <div className='botonComponent'>
+                    <p>Nueva orden</p>
+                </div>
+                <div className='botonComponent'>
+                    <p>Ordeness</p>
+                </div>
+            </div>
+      
+                <div className='typeMenu'>
+                    <div className='typeOfFood' id='desayuno' >
+                        <p>Desayuno</p>
+                    </div>
+                    <div className='typeOfFood' id='comida'>
+                        <p>Comida</p>
+                    </div>
+                </div>
+                <div className='productMenu'>
+                    {menu&&menu.map(product => 
+                        <MenuElement 
+                            product={product} 
+                            key={product._id}
+                        />
+                    )}
+                </div>              
+           
+           <div className="toOrder">
+                <div className='nameColumns'>
+                </div>
+                <div className='itemOrder'>
+                    <div className='item'>
+                    </div>
+                </div>
+                <div className='total'>
+                </div>
+                <div className='confirmOrder'>
+                    <div>
+                        <textarea name="textarea" rows="10" cols="20">Observaciones...</textarea>
+                    </div>
+                    <div className='confirmButton'>
+                        
+                    </div>
+                </div>
+            </div>           
         </div>
-    )
-}
+        )
+} 
