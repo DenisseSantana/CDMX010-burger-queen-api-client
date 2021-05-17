@@ -56,8 +56,7 @@ export const Waiter = () => {
 
     const handleAddItem = ((item) => {
         setOrder({
-            ...order,
-            items: [...order.items, item],
+            ...order, items: [...order.items, item],
             total: order.total += parseInt(item.price)
         })
         //     // const items =order.items;
@@ -190,6 +189,7 @@ export const Waiter = () => {
 
     return (
         <div className='waiterView'>
+            
             <Header />
 
             <div className='bottonSeccion'>
@@ -235,7 +235,7 @@ export const Waiter = () => {
                         <textarea name="textarea" rows="4" cols="45">Observaciones...</textarea>
                     </div>
                     <div className='total' order={order}>
-                        <h3> Total:$ {!order.items ? '0' : order.total}</h3>
+                        <h3> Total: $ {!order.items ? '0' : order.total}</h3>
                     </div>
                 </div>
 
